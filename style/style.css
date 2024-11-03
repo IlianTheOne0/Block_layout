@@ -1,0 +1,253 @@
+@font-face {
+	font-family: 'Regular';
+	src: url('../assets/fonts/OpenSans-Regular.ttf');
+}
+
+* {
+	box-sizing: border-box;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	font-family: 'Regular', sans-serif;
+	color: white;
+	background-color: rgb(15, 15, 15);
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	box-shadow: 0 4px 4px rgb(10, 10, 10);
+	background-color: rgb(10, 10, 10);
+}
+
+header ul {
+	text-align: center;
+	list-style: none;
+}
+
+header ul li {
+	display: inline-block;
+	padding: 1% 0;
+}
+
+header ul li:not(:first-child) {
+	margin-left: 3.5%;
+}
+
+header ul li a {
+	font-size: 18px;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+header ul li:hover {
+	transform: translateY(-2.5px);
+	text-shadow: 4px 4px 4px rgb(70, 70, 70);
+	transition: 0.5s ease;
+}
+
+main {
+	width: 100%;
+	display: grid;
+	position: absolute;
+	top: 14.5%;
+}
+
+
+.ominous_night {
+	width: 100%;
+	position: fixed;
+	padding: 1% 1.5%;
+	text-shadow: 2px 2px 2px rgb(10, 10, 10);
+	color: rgb(250, 70, 10);
+	background-color: rgb(34, 34, 34);
+}
+
+.info {
+	width: 100%;
+	padding: 2.5% 2%;
+	border-left: 5px solid rgb(255, 65, 0);
+	color: rgb(255, 200, 20);
+	background-color: rgb(50, 50, 50);
+}
+
+.info h2 {
+	margin-bottom: 1%;
+	font-size: 20px;
+}
+
+.info p, .facts-list {
+	font-size: 16px;
+}
+
+.touch_if_you_dare, .death_is_comming {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2.5% 0;
+}
+
+.touch_if_you_dare img {
+	width: 10%;
+	height: auto;
+	margin-bottom: 1.5%;
+	transition: 0.5s ease;
+}
+
+.touch_if_you_dare img:hover {
+	transform: scale(1.25);
+}
+
+.touch_if_you_dare p {
+	color: rgb(255, 200, 20);
+}
+
+.second_info {
+	color: white;
+}
+
+.death_is_comming {
+	color: rgb(200, 10, 10);
+	opacity: 1;
+	animation: death_is_comming 1s infinite;
+}
+
+@keyframes death_is_comming {
+	0%, 100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.history p:not(:first-child) {
+	margin-top: 0.5%;
+}
+
+.history, .info:not(.second_info) {
+	margin-bottom: 2%;
+}
+
+.facts-list {
+	list-style-position: inside;
+}
+
+.practice {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5% 2%;
+	color: rgb(225, 225, 225);
+}
+
+.practice h2 {
+	margin-bottom: 2%;
+	text-shadow: 4px 1px 3px rgb(10, 10, 10);
+	color: rgb(255, 70, 0);
+}
+
+.example {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1.5%;
+	padding: 2.5% 0 2%;
+	border: 2px solid #ff4500;
+	border-radius: 10px;
+	box-shadow: 0 4px 14px rgb(10, 10, 10);
+	background-color: rgb(35, 35, 35);
+}
+
+.example * {
+	display: block;
+}
+
+.example h3 {
+	margin-bottom: 2.5%;
+	text-shadow: 2px 2px 2px rgb(10, 10, 10);
+	color: rgb(255, 200, 30);
+}
+
+.example div {
+	margin: 1% 0;
+	padding: 2px;
+	border-radius: 3.5px;
+	color: rgb(240, 95, 80);
+	background-color: rgb(65, 70, 70);
+}
+
+.ghost-button {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 1% auto;
+    padding: 1% 2%;
+    font-size: 18px;
+    border: 2px solid orange;
+	border-radius: 5px;
+    color: orange;
+    background-color: transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.ghost-button:hover {
+    background-color: orange;
+    color: black;
+}
+
+.ghost-button:focus + .ghost-img {
+	transform: translate(0, 0);
+    animation: ghost 4s ease-in-out forwards;
+    opacity: 1;
+}
+
+.ghost-img {
+    width: 200px;
+    height: auto;
+    position: fixed;
+    bottom: 100px;
+    left: -100px;
+    z-index: 1001;
+    transform: rotate(0);
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+@keyframes ghost {
+    0% {
+        transform: translate(0, 0) rotate(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translate(25vw, -25vh) rotate(25deg);
+        opacity: 1;
+    }
+
+    70% {
+        transform: translate(75vw, -50vh) rotate(45deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(100vw, -100vh) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+.ghost-div {
+	font-size: 10px;
+	text-align: center;
+}
